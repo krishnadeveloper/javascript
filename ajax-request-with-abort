@@ -1,0 +1,17 @@
+$(document).ready(
+    var xhr;
+
+    var fn = function(){
+        if(xhr && xhr.readyState != 4){
+            xhr.abort();
+        }
+        xhr = $.ajax({
+            url: 'ajax/progress.ftl',
+            success: function(data) {
+                //do something
+            }
+        });
+    };
+
+    var interval = setInterval(fn, 500);
+);
